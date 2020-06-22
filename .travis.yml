@@ -1,0 +1,9 @@
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $PAGES_TOKEN
+  keep_history: true
+  on:
+    branch: master
+notifications:
+  slack: leaselot:t9zOZZN9IyolOGTSxpnSUTKH
