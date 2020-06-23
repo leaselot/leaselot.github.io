@@ -14,27 +14,27 @@ let requestDemo = function(req, res) {
 
 	if (!validation.validName(name)) {
 		res.status(422);
-		res.json("INVALID_NAME");
+		res.send("INVALID_NAME");
 		return;
 	}
 	if (!validation.validEmail(email)) {
 		res.status(422);
-		res.json("INVALID_EMAIL");
+		res.send("INVALID_EMAIL");
 		return;
 	}
 	if (!validation.validPhoneNumber(phone)) {
 		res.status(422);
-		res.json("INVALID_PHONE");
+		res.send("INVALID_PHONE");
 		return;
 	}
 	if (!validation.validMessage(message)) {
 		res.status(422);
-		res.json("INVALID_MESSAGE");
+		res.send("INVALID_MESSAGE");
 		return;
 	}
 	if (!validation.validMisc(company)) {
 		res.status(422);
-		res.json("INVALID_COMPANY");
+		res.send("INVALID_COMPANY");
 		return;
 	}
 
@@ -52,11 +52,11 @@ let requestDemo = function(req, res) {
 	sgMail.send(msg).then(
 		() => {
 			res.status(200);
-			res.json("SUCCESS");
+			res.send("SUCCESS");
 		},
 		err => {
 			res.status(500);
-			res.json("FAILURE");
+			res.send("FAILURE");
 		});
 };
 

@@ -9,6 +9,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.post('/request-demo', routes.requestDemo);
 
-app.listen(process.env.PORT, () => {
+let server = app.listen(process.env.PORT, () => {
 	console.log(`Server listening on PORT ${process.env.PORT}`);
-})
+});
+
+module.exports = server;
