@@ -5,9 +5,8 @@ let validName = function(name) {
 }
 
 let validPhoneNumber = function(phoneNumber) {
-	if (phoenNumber == null) return false;
-	if (phoneNumber.length > 20) return false;
-	return /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(phoneNumber);
+	if (phoneNumber == null) return false;
+	return /^\d{10}$/.test(phoneNumber);
 }
 
 let validEmail = function(email) {
@@ -18,6 +17,7 @@ let validEmail = function(email) {
 
 let validMessage = function(message) {
 	if (message == null) return false;
+	if (message.length == 0) return false;
 	return message.length <= 500;
 }
 
