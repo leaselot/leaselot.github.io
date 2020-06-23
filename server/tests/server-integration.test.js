@@ -1,3 +1,6 @@
+jest.mock('@sendgrid/mail');
+
+const sgMail = require('@sendgrid/mail');
 let request = require('supertest');
 require = require('really-need');
 
@@ -11,6 +14,7 @@ describe('request demo', () => {
 	});
 
 	test("Request Demo with no name", (done) => {
+		sgMail.send.mockReturnValue(Promise.resolve());
 		request(server)
 			.post('/request-demo')
 			.send(
@@ -29,6 +33,7 @@ describe('request demo', () => {
 	});
 
 	test("Request Demo with no email", (done) => {
+		sgMail.send.mockReturnValue(Promise.resolve());
 		request(server)
 			.post('/request-demo')
 			.send(
@@ -47,6 +52,7 @@ describe('request demo', () => {
 	});
 
 	test("Request Demo with no phone", (done) => {
+		sgMail.send.mockReturnValue(Promise.resolve());
 		request(server)
 			.post('/request-demo')
 			.send(
@@ -65,6 +71,7 @@ describe('request demo', () => {
 	});
 
 	test("Request Demo with no company", (done) => {
+		sgMail.send.mockReturnValue(Promise.resolve());
 		request(server)
 			.post('/request-demo')
 			.send(
@@ -83,6 +90,7 @@ describe('request demo', () => {
 	});
 
 	test("Request Demo with no message", (done) => {
+		sgMail.send.mockReturnValue(Promise.resolve());
 		request(server)
 			.post('/request-demo')
 			.send(
@@ -100,5 +108,23 @@ describe('request demo', () => {
 			});
 	});
 
-	
+	test("proper email test", (done) => {
+		sgMail.send.mockReturnValue(Promise.resolve());
+		request(server)
+			.post('/request-demo')
+			.send(
+				{
+					name: "Greg Kofman",
+					email: "kofmangregory@gmail.com",
+					phone: "1231231231",
+					company: "Leaselot",
+					message: "Hello"
+				})
+			.set("Content-Type", "application/json")
+			.expect(200, "SUCCESS")
+			.end((err, res) => {
+				if (err) return done(err);
+				done();
+			});
+	});
 });
