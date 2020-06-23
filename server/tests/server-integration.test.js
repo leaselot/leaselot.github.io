@@ -110,6 +110,8 @@ describe('request demo', () => {
 
 	test("proper email test", (done) => {
 		sgMail.send.mockReturnValue(Promise.resolve());
+		sgMail.setApiKey.mockReturnValue(null);
+
 		request(server)
 			.post('/request-demo')
 			.send(
