@@ -1,6 +1,8 @@
 language: node_js
 node_js: 
   - 10
+env:
+  - SENDGRID_APIKEY=$SENDGRID_APIKEY
 script:
   - cd server
   - npm install
