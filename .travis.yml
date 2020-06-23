@@ -5,3 +5,5 @@ script:
   - cd server
   - npm install
   - npm test
+notifications:
+  slack: leaselot:t9zOZZN9IyolOGTSxpnSUTKH
