@@ -2,7 +2,9 @@ language: node_js
 node_js: 
   - 10
 env:
+  - PORT=$PORT
   - SENDGRID_APIKEY=$SENDGRID_APIKEY
+  - EMAIL=$EMAIL
 script:
   - cd server
   - npm install
