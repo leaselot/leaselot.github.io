@@ -110,7 +110,7 @@ describe('request demo', () => {
 
 	test("proper email test", (done) => {
 		sgMail.send.mockReturnValue(Promise.resolve());
-		sgMail.setApiKey.mockReturnValue(null);
+		process.env.SENDGRID_APIKEY = "SG.";
 
 		request(server)
 			.post('/request-demo')
