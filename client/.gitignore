@@ -21,6 +21,9 @@ coverage
 .nyc_output
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> gitignore update
 # Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
@@ -36,6 +39,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+<<<<<<< HEAD
 
 # Distribution directories
 dist/
@@ -63,4 +67,3 @@ typings/
 
 # vscode dependencies
 /.vscode
-
