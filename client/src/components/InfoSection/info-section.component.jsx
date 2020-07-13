@@ -1,5 +1,5 @@
 import React from 'react';
-import './info-section.style.css';
+import '../../style/info-section.style.css';
 
 export const InfoSection = (props) => {
     return(

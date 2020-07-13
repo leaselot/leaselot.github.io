@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Logo from "../../Navbar logo.png";
-import './nav-bar.style.css';
+import '../../style/nav-bar.style.css';
 
 // export const NavBar = (props) => {
 //     return (

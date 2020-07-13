@@ -1,6 +1,6 @@
 import React from 'react';
 import {BackgroundImage} from '../../hero-background.png';
-import './hero-section.style.css'
+import '../../style/hero-section.style.css';
 
 export const HeroSection = (props) => {
     return (
