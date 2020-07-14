@@ -82,6 +82,7 @@ input, textarea{
     border-radius: 20px;
     width: 40%;
     background-color: #F4B41A;
+    cursor: pointer;
 }
 
 
