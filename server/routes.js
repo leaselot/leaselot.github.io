@@ -7,7 +7,6 @@ sgMail.setApiKey(process.env.SENDGRID_APIKEY);
 let requestDemo = function(req, res) {
 	console.log(req.body);
 	const name = req.body.name;
-	console.log('Name recieved: ' + req.body.name);
 	const email = req.body.email;
 	const phone = req.body.phone;
 	const company = req.body.company;

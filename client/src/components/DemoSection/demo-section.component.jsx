@@ -40,8 +40,8 @@ export class DemoSection extends React.Component{
 
         fetch('http://localhost:7000/request-demo', {
             method: 'POST',
-            header: {'Access-Control-Allow-Origin': 'http://localhost:3000',
-                     'Content-type': 'application/json'},
+            headers: {'Access-Control-Allow-Origin': 'http://localhost:3000',
+                     'Content-Type': 'application/json'},
             mode: 'cors',
             // body: {
             //     'name': this.state.name,
