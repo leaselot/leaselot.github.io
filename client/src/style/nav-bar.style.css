@@ -1,0 +1,199 @@
+body{
+    /* background-color:red; */
+    font-family: 'Raleway', sans-serif;
+}
+
+a, a:visited, a:active, a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.block-container{
+    /* border: 1px solid red; */
+    position: relative;
+    display: block;
+    z-index: 10;
+}
+
+.nav{
+    background-color: #143D59;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 60px;
+    /* border: 1px solid red; */
+}
+
+.nav-logo{
+    height: 100%;
+}
+
+.nav-options{
+    list-style-type: none;
+    display: flex;
+    /* border: 1px solid red; */
+    align-items: center;
+    height: 100%;
+    padding: 0;
+}
+
+.nav-item{
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+.nav-options a{
+    color: white;
+    /* border: 1px solid green; */
+    padding: 20px 30px;
+    transition: .6s ease-in-out all;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0;
+}
+
+.nav-options a:hover{
+    color: white;
+}
+
+.nav-options .nav-item a{
+    color: white;
+}
+
+.nav-options .nav-item:hover{
+    background-color: #315873;
+}
+
+/* container for the 3 bars which make up the hamburger (and later, the 'X') */
+.bars {
+    height: 28px;
+    width: 28px;
+    margin-right: 15px;
+    display: block;
+    padding: 2px 5px; 
+    display: none;
+    position: relative;
+    cursor: pointer;
+}
+
+/* the 3 bars which make up the hamburger */
+.bars span{
+    height: 4px;
+    width: 26px;
+    background-color: white;
+    margin: 3px 0px;
+    display: block;
+    position: relative;
+}
+
+/* configure nav options when the collasped nav-bar is closed */
+ul.bars-closed {
+    display: none;
+    /* fade out animation won't work unless I change the display style from none or add a delay before 'none' triggers */
+    animation: fade-out ease-in-out 0.6s;
+    animation-fill-mode: forwards;
+    z-index: 0;
+}
+
+/* configure the nav options when the collasped nav-bar is expanded */
+ul.bars-open{
+    display: block;
+    position: absolute;
+    /* border: 1px solid red; */
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background-color: #143D59;
+    /* NTS: check for cross-platform compatibility */
+    box-shadow: 0px 5px 5px rgba(31, 31, 31, 0.858), 
+    -6px 5px 8px rgba(31, 31, 31, 0.858), -6px 5px 8px rgba(31, 31, 31, 0.858);
+    animation: fade-in ease-in-out 0.6s;
+    animation-fill-mode: forwards;
+    z-index: -1;
+}
+
+ul.bars-open .nav-item{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+ul.bars-open .nav-item:hover{
+    background-color: #315873;
+}
+
+ul.bars-open a{
+    width: calc(100% - 30px);
+    height: 100%;
+    display: block;
+    padding: 12px 15px;
+    color: white;
+}
+
+/* top bar of the hamburger which rotates to form the 'X' */
+.bars-open .bar-1{
+    position: absolute;
+    margin: 0;
+    transform: rotate(-45deg);
+    top: 13px;
+    transition: .4s ease-in-out transform, .4s ease-in-out top, .4s ease-in-out display;
+}
+
+/* middle bar of the hamburger which disappears */
+.bars-open .bar-2{
+    display: none;
+}
+
+/* bottom bar of the hamburger which rotates to form the 'X' */
+.bars-open .bar-3{
+    position: absolute;
+    margin: 0;
+    transform: rotate(45deg);
+    top: 13px;
+    transition: .4s ease-in-out transform, .4s ease-in-out top, .4s ease-in-out display;
+}
+
+/* collapse nav-bar */
+@media screen and (max-width: 768px){
+    .nav-item {
+        display: none;
+    }
+    .bars {
+        display: block;
+    }
+
+}
+
+/* make sure that the nav-options if expanded go away if screen size increases more than 769px */
+@media screen and (min-width: 769px){
+    ul.bars-open{
+        display: none;
+    }
+}
+
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+        top: 0;
+    }
+    100%{
+        opacity: 1;
+        top: 60px;
+    }
+}
+
+@keyframe fade-out{
+    0%{
+        opacity: 1;
+        top: 60px;
+    }
+    100%{
+        opacity: 0;
+        top: 0px;
+    }
+}

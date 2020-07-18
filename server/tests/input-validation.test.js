@@ -42,7 +42,7 @@ describe("Name validation", () => {
 	test("name with number is invalid", () => {
 		expect(validation.validName("Gr3g Kofman")).toBeFalsy();
 	});
-});
+}); 
 
 describe("Phone number validation", () => {
 	test("null phone number is invalid", () => {

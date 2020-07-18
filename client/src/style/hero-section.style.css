@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+.hero-section{
+    margin: 0;
+    padding: 0;
+    background-image: url("./../hero-background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    z-index: -2;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+}
+
+/* set background color to dark blue, since the original image has it's opacity altered */
+.hero-section::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 60px);
+    z-index: -3;
+    background-color: #143D59;
+}
+
+.headline{
+    color: white;
+    font-size: 2.8em;
+    /* border: 1px solid red; */
+    max-width: 580px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.subhead{
+    color: white;
+    font-size: 1.9em;
+    font-weight: normal;
+    /* border: 1px solid green; */
+    margin-bottom: 100px;
+}
+
+@media screen and (max-width: 768px){
+    .headline{
+        font-size: 2.2em;
+    }
+    .subhead{
+        font-size: 1.3em
+    }
+}
+
+@media screen and (max-width: 476px){
+    .headline{
+        font-size: 1.8em;
+    }
+    .subhead{
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-height: 300px){
+    .subhead{
+        margin-bottom: 10px;
+    }
+}

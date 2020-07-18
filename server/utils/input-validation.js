@@ -1,4 +1,5 @@
 let validName = function(name) {
+	console.log('Name is: ' + name);
 	if (name == null) return false;
 	if (name.length > 80) return false;
 	return /^(([A-Za-z]+[\-\']?)*([A-Za-z]+)?\s)+([A-Za-z]+[\-\']?)*([A-Za-z]+)?$/.test(name);
