@@ -1,0 +1,30 @@
+body {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+.flash {
+  /* transition: all 2s ease-in-out; */
+}
+
+.no-flash {
+  border: 1px solid blue;
+  height: 1;
+  opacity: 1;
+}
+
+.flash-error {
+  border: 1px solid red;
+  height: 40px;
+  opacity: 1;
+}
+
+.flash-success {
+  border: 1px solid green;
+  height: 40px;
+  opacity: 1;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: normal;
+  font-size: 0.9em;
+}

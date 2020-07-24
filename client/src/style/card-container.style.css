@@ -1,32 +1,38 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-    box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+body {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
 }
 
-.card-container{
-    padding: 40px 0px;
-    max-width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
-    background-color: white;
+.card-container {
+  padding: 40px 0px;
+  max-width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
 }
 
-@media screen and (max-width: 1200px){
-    .card-container{
-        max-width: 100%;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+@media screen and (min-width: 3000px) {
+  .card-container {
+    max-width: 65%;
+  }
 }
 
-@media screen and (max-width: 768px){
-    .card-container{
-        flex-direction: column;
-    }
+@media screen and (max-width: 1200px) {
+  .card-container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+  }
 }

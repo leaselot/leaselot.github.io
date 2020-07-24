@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-variant-ligatures: no-common-ligatures;
 }
 
 .App-logo {
