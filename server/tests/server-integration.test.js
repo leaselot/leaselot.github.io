@@ -25,7 +25,7 @@ describe('request demo', () => {
 					message: "Hello"
 				})
 			.set("Content-Type", "application/json")
-			.expect(422, "INVALID_NAME")
+			.expect(200, '"INVALID_NAME"')
 			.end((err, res) => {
 				if (err) return done(err);
 				done();
@@ -44,7 +44,7 @@ describe('request demo', () => {
 					message: "Hello"
 				})
 			.set("Content-Type", "application/json")
-			.expect(422, "INVALID_EMAIL")
+			.expect(200, '"INVALID_EMAIL"')
 			.end((err, res) => {
 				if (err) return done(err);
 				done();
@@ -63,7 +63,7 @@ describe('request demo', () => {
 					message: "Hello"
 				})
 			.set("Content-Type", "application/json")
-			.expect(422, "INVALID_PHONE")
+			.expect(200, '"INVALID_PHONE"')
 			.end((err, res) => {
 				if (err) return done(err);
 				done();
@@ -82,7 +82,7 @@ describe('request demo', () => {
 					message: "Hello"
 				})
 			.set("Content-Type", "application/json")
-			.expect(422, "INVALID_COMPANY")
+			.expect(200, '"INVALID_COMPANY"')
 			.end((err, res) => {
 				if (err) return done(err);
 				done();
@@ -101,7 +101,7 @@ describe('request demo', () => {
 					company: "Leaselot",
 				})
 			.set("Content-Type", "application/json")
-			.expect(422, "INVALID_MESSAGE")
+			.expect(200, '"INVALID_MESSAGE"')
 			.end((err, res) => {
 				if (err) return done(err);
 				done();
@@ -121,7 +121,7 @@ describe('request demo', () => {
 					message: "Hello"
 				})
 			.set("Content-Type", "application/json")
-			.expect(200, "SUCCESS")
+			.expect(200, '"SUCCESS"')
 			.end((err, res) => {
 				if (err) return done(err);
 				done();
