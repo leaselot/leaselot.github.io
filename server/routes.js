@@ -13,28 +13,28 @@ let requestDemo = function(req, res) {
 	const message = req.body.message;
 
 	if (!validation.validName(name)) {
-		res.status(422);
-		res.send("INVALID_NAME");
+		//res.status(422);
+		res.json("INVALID_NAME");
 		return;
 	}
 	if (!validation.validEmail(email)) {
-		res.status(422);
-		res.send("INVALID_EMAIL");
+		//res.status(422);
+		res.json("INVALID_EMAIL");
 		return;
 	}
 	if (!validation.validPhoneNumber(phone)) {
-		res.status(422);
-		res.send("INVALID_PHONE");
+		//res.status(422);
+		res.json("INVALID_PHONE");
 		return;
 	}
 	if (!validation.validMessage(message)) {
-		res.status(422);
-		res.send("INVALID_MESSAGE");
+		//res.status(422);
+		res.json("INVALID_MESSAGE");
 		return;
 	}
 	if (!validation.validMisc(company)) {
-		res.status(422);
-		res.send("INVALID_COMPANY");
+		//res.status(422);
+		res.json("INVALID_COMPANY");
 		return;
 	}
 
@@ -51,12 +51,12 @@ let requestDemo = function(req, res) {
 	};
 	sgMail.send(msg).then(
 		() => {
-			res.status(200);
-			res.send("SUCCESS");
+			//res.status(200);
+			res.json("SUCCESS");
 		},
 		err => {
-			res.status(500);
-			res.send("FAILURE");
+			//res.status(500);
+			res.json("FAILURE");
 		});
 };
 
