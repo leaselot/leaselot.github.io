@@ -8,6 +8,7 @@ export class DemoSection extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.resetResponse = this.resetResponse.bind(this);
 
     this.flashStatus = "success";
     this.flashDisplay = "visible";
@@ -19,6 +20,9 @@ export class DemoSection extends React.Component {
       phone: "",
       company: "",
       message: "",
+      flashStatus: "success",
+      flashDisplay: "",
+      flashMessage: "",
     };
   }
 
@@ -35,11 +39,22 @@ export class DemoSection extends React.Component {
     );
   }
 
+  resetResponse() {
+    var nameInput = document.getElementById("name");
+    var emailInput = document.getElementById("email");
+    var phoneInput = document.getElementById("phone");
+    var companyInput = document.getElementById("company");
+    var messageInput = document.getElementById("message");
+
+    nameInput.value = "";
+    emailInput.value = "";
+    phoneInput.value = "";
+    companyInput.value = "";
+    messageInput.value = "";
+  }
+
   handleSubmit(event) {
     // preventDefault prevents the 'normal procedure' from firing
-
-    alert("Form Submitted");
-
     event.preventDefault();
     // const data = new FormData(event.target);
     // console.log(this.state);
@@ -54,8 +69,54 @@ export class DemoSection extends React.Component {
       mode: "cors",
       body: JSON.stringify(data),
     })
-      .then((response) => console.log(response))
-      .then((data) => console.log(data))
+      .then((response) => response.json())
+      .then((data) => {
+        if (data == "INVALID_NAME") {
+          this.setState({
+            flashStatus: "error",
+            flashMessage: "Invalid Name Entered",
+            flashDisplay: "visible",
+          });
+        } else if (data == "INVALID_EMAIL") {
+          this.setState({
+            flashStatus: "error",
+            flashMessage: "Invalid Email Entered.",
+            flashDisplay: "visible",
+          });
+        } else if (data == "INVALID_PHONE") {
+          this.setState({
+            flashStatus: "error",
+            flashMessage: "Invalid Phone Number Entered.",
+            flashDisplay: "visible",
+          });
+        } else if (data == "INVALID_MESSAGE") {
+          this.setState({
+            flashStatus: "error",
+            flashMessage: "Invalid Message Entered.",
+            flashDisplay: "visible",
+          });
+        } else if (data == "INVALID_COMPANY") {
+          this.setState({
+            flashStatus: "error",
+            flashMessage: "Invalid Company Name Entered.",
+            flashDisplay: "visible",
+          });
+        } else {
+          this.setState({
+            flashStatus: "success",
+            flashMessage: "Email Sent Successfully!",
+            flashDisplay: "visible",
+            name: "",
+            email: "",
+            phone: "",
+            company: "",
+            message: "",
+          });
+          this.resetResponse();
+        }
+
+        console.log(data);
+      })
       .catch((error) => console.log("ERROR:" + error));
   }
 
@@ -66,9 +127,9 @@ export class DemoSection extends React.Component {
         {/* Add in conditional display thing here through an if/else statement */}
         <FlashMessage
           className="flash-message"
-          message=""
-          status={this.flashStatus}
-          display={this.flashDisplay}
+          message={this.state.flashMessage}
+          status={this.state.flashStatus}
+          display={this.state.flashDisplay}
         />
         <form className="demo-form" onSubmit={this.handleSubmit}>
           <div className="row row1">
@@ -76,7 +137,7 @@ export class DemoSection extends React.Component {
               type="text"
               name="name"
               id="name"
-              placeholder="Name"
+              placeholder="Full Name"
               onChange={this.handleChange}
             />
             <input

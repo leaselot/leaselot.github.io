@@ -74,16 +74,24 @@ export class NavBar extends Component {
           </ul>
           <ul className={"nav-options " + this.state.navState}>
             <li className="nav-item">
-              <a href="#home">Home</a>
+              <a href="#home" onClick={this.toggleNav}>
+                Home
+              </a>
             </li>
             <li className="nav-item">
-              <a href="#about">About</a>
+              <a href="#about" onClick={this.toggleNav}>
+                About
+              </a>
             </li>
             <li className="nav-item">
-              <a href="#how-it-works">How it works</a>
+              <a href="#how-it-works" onClick={this.toggleNav}>
+                How it works
+              </a>
             </li>
             <li className="nav-item">
-              <a href="#request-demo">Request demo</a>
+              <a href="#request-demo" onClick={this.toggleNav}>
+                Request demo
+              </a>
             </li>
           </ul>
         </section>

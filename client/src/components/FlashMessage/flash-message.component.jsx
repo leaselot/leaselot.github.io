@@ -8,7 +8,7 @@ export const FlashMessage = (props) => {
   if (props.display === "visible" && props.status === "error") {
     return (
       <div className="flash flash-error">
-        <h3>Error!</h3>
+        <h3>{props.message}</h3>
       </div>
     );
   }
@@ -16,16 +16,12 @@ export const FlashMessage = (props) => {
   else if (props.display === "visible" && props.status == "success") {
     return (
       <div className="flash flash-success">
-        <h3>Success!</h3>
+        <h3>{props.message}</h3>
       </div>
     );
   }
   // Return this for neither
   else {
-    return (
-      <div className="flash no-flash">
-        <h3>No Flash Message</h3>
-      </div>
-    );
+    return <div className="flash no-flash"></div>;
   }
 };
