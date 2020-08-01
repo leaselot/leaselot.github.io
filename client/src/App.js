@@ -4,7 +4,7 @@ import { NavBar } from "./components/NavBar/nav-bar.component";
 import { HeroSection } from "./components/HeroSection/hero-section.component";
 import { CardContainer } from "./components/CardContainer/card-container.component";
 import { InfoSection } from "./components/InfoSection/info-section.component";
-import { DemoSection } from "./components/DemoSection/demo-section.component";
+import { ContactSection } from "./components/ContactSection/contact-section.component";
 
 class App extends Component {
   constructor(props) {
@@ -79,7 +79,7 @@ class App extends Component {
         />
         <CardContainer content={this.aboutCards} />
         <InfoSection content={this.howItWorks} />
-        <DemoSection />
+        <ContactSection />
       </div>
     );
   }

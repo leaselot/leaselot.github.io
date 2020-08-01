@@ -12,26 +12,21 @@ body {
   font-size: 2.8em;
   margin-bottom: 30px;
   color: #f4b41a;
-  /* border: 1px solid red; */
 }
 
-.demo-section {
+.contact-us {
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: #143d59;
-  border: 1px solid green;
 }
 
-.demo-form {
+.contact-form {
   margin: 0 auto;
-  /* border: 1px solid red; */
   max-width: 70%;
   display: block;
-  /* transition: 5s linear all; */
 }
 
 .row1 {
-  /* border: 1px solid cyan; */
   display: flex;
   justify-content: space-around;
 }
@@ -41,7 +36,6 @@ body {
 }
 
 .row2 {
-  /* border: 1px solid lightgreen; */
   display: flex;
   justify-content: space-around;
 }
@@ -51,7 +45,6 @@ body {
 }
 
 .row3 {
-  /* border: 1px solid yellow; */
   display: flex;
   justify-content: center;
 }
@@ -90,18 +83,11 @@ textarea {
   cursor: pointer;
 }
 
-.submit-btn:hover {
-  background-color: #e6a12b;
-}
-
 .flash-message {
   border: 1px solid red;
   color: white;
   padding: 10px 5px;
-  /* height: 40px; */
-  /* width: 80px; */
-  /* max-width: 70%; */
-  /* display: block; */
+  display: block;
 }
 
 input::placeholder,
@@ -111,7 +97,7 @@ textarea::placeholder {
 }
 
 @media screen and (min-width: 1200px) {
-  .demo-form {
+  .contact-form {
     max-width: 780px;
   }
 }
@@ -124,14 +110,13 @@ textarea::placeholder {
   textarea {
     font-size: 2em;
   }
-  .demo-form {
-    /* border: 1px solid red; */
+  .contact-form {
     max-width: 1000px;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .demo-form {
+  .contact-form {
     max-width: 80%;
   }
 
@@ -142,7 +127,7 @@ textarea::placeholder {
 }
 
 @media screen and (max-width: 700px) {
-  .demo-form {
+  .contact-form {
     max-width: 100%;
   }
 }

@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
 
-app.post('/request-demo', routes.requestDemo);
+app.post('/contact-us', routes.requestDemo);
 
 let server = app.listen(process.env.PORT, () => {
 	console.log(`Server listening on PORT ${process.env.PORT}`);

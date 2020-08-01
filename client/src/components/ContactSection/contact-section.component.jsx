@@ -1,8 +1,8 @@
 import React from "react";
-import "../../style/demo-section.style.css";
+import "../../style/contact-section.style.css";
 import { FlashMessage } from "../FlashMessage/flash-message.component";
 
-export class DemoSection extends React.Component {
+export class ContactSection extends React.Component {
   constructor(props) {
     super(props);
 
@@ -60,7 +60,7 @@ export class DemoSection extends React.Component {
     // console.log(this.state);
     var data = this.state;
 
-    fetch("http://localhost:7000/request-demo", {
+    fetch("http://localhost:7000/contact-us", {
       method: "POST",
       headers: {
         "Access-Control-Allow-Origin": "http://localhost:3000",
@@ -122,8 +122,8 @@ export class DemoSection extends React.Component {
 
   render() {
     return (
-      <section id="request-demo" className="demo-section">
-        <h2 className="section-title">Request Demo</h2>
+      <section id="contact-us" className="contact-us">
+        <h2 className="section-title">Contact Us</h2>
         {/* Add in conditional display thing here through an if/else statement */}
         <FlashMessage
           className="flash-message"
@@ -131,7 +131,7 @@ export class DemoSection extends React.Component {
           status={this.state.flashStatus}
           display={this.state.flashDisplay}
         />
-        <form className="demo-form" onSubmit={this.handleSubmit}>
+        <form className="contact-form" onSubmit={this.handleSubmit}>
           <div className="row row1">
             <input
               type="text"
