@@ -74,7 +74,7 @@ export class ContactSection extends React.Component {
         if (data == "INVALID_NAME") {
           this.setState({
             flashStatus: "error",
-            flashMessage: "Invalid Name Entered",
+            flashMessage: "Please enter your full name.",
             flashDisplay: "visible",
           });
         } else if (data == "INVALID_EMAIL") {
@@ -86,13 +86,13 @@ export class ContactSection extends React.Component {
         } else if (data == "INVALID_PHONE") {
           this.setState({
             flashStatus: "error",
-            flashMessage: "Invalid Phone Number Entered.",
+            flashMessage: "Invalid Phone Number Entered. Please use a standard 10 digit format.",
             flashDisplay: "visible",
           });
         } else if (data == "INVALID_MESSAGE") {
           this.setState({
             flashStatus: "error",
-            flashMessage: "Invalid Message Entered.",
+            flashMessage: "Invalid Message Entered. Please enter a shorter message.",
             flashDisplay: "visible",
           });
         } else if (data == "INVALID_COMPANY") {
@@ -104,7 +104,7 @@ export class ContactSection extends React.Component {
         } else {
           this.setState({
             flashStatus: "success",
-            flashMessage: "Email Sent Successfully!",
+            flashMessage: "We have received your message and will promptly respond.",
             flashDisplay: "visible",
             name: "",
             email: "",
