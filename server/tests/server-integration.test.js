@@ -4,7 +4,7 @@ const sgMail = require('@sendgrid/mail');
 let request = require('supertest');
 require = require('really-need');
 
-describe('request demo', () => {
+describe('contact us', () => {
 	let server;
 	beforeAll(() => {
 		server = require('../index.js', { bustCache: true });
@@ -16,7 +16,7 @@ describe('request demo', () => {
 	test("Request Demo with no name", (done) => {
 		sgMail.send.mockReturnValue(Promise.resolve());
 		request(server)
-			.post('/request-demo')
+			.post('/contact-us')
 			.send(
 				{
 					email: "kofmangregory@gmail.com",
@@ -35,7 +35,7 @@ describe('request demo', () => {
 	test("Request Demo with no email", (done) => {
 		sgMail.send.mockReturnValue(Promise.resolve());
 		request(server)
-			.post('/request-demo')
+			.post('/contact-us')
 			.send(
 				{
 					name: "Greg Kofman",
@@ -54,7 +54,7 @@ describe('request demo', () => {
 	test("Request Demo with no phone", (done) => {
 		sgMail.send.mockReturnValue(Promise.resolve());
 		request(server)
-			.post('/request-demo')
+			.post('/contact-us')
 			.send(
 				{
 					name: "Greg Kofman",
@@ -73,7 +73,7 @@ describe('request demo', () => {
 	test("Request Demo with no company", (done) => {
 		sgMail.send.mockReturnValue(Promise.resolve());
 		request(server)
-			.post('/request-demo')
+			.post('/contact-us')
 			.send(
 				{
 					name: "Greg Kofman",
@@ -92,7 +92,7 @@ describe('request demo', () => {
 	test("Request Demo with no message", (done) => {
 		sgMail.send.mockReturnValue(Promise.resolve());
 		request(server)
-			.post('/request-demo')
+			.post('/contact-us')
 			.send(
 				{
 					name: "Greg Kofman",
@@ -111,7 +111,7 @@ describe('request demo', () => {
 	test("proper email test", (done) => {
 		sgMail.send.mockReturnValue(Promise.resolve());
 		request(server)
-			.post('/request-demo')
+			.post('/contact-us')
 			.send(
 				{
 					name: "Greg Kofman",
