@@ -10,7 +10,7 @@ import "../../style/nav-bar.style.css";
 //                 <li class="nav-item"><a>Home</a></li>
 //                 <li class="nav-item"><a>About</a></li>
 //                 <li class="nav-item"><a>How it works</a></li>
-//                 <li class="nav-item"><a>Request demo</a></li>
+//                 <li class="nav-item"><a>Contact us</a></li>
 //                 <li class="bars nav-closed ">
 //                     <div class="x-container">
 //                         <span class="bar-1"></span>
@@ -61,7 +61,7 @@ export class NavBar extends Component {
               <a href="#how-it-works">How it works</a>
             </li>
             <li className="nav-item">
-              <a href="#request-demo">Request demo</a>
+              <a href="#contact-us">Contact us</a>
             </li>
             <li
               className={"bars nav-closed " + this.state.navState}
@@ -89,8 +89,8 @@ export class NavBar extends Component {
               </a>
             </li>
             <li className="nav-item">
-              <a href="#request-demo" onClick={this.toggleNav}>
-                Request demo
+              <a href="#contact-us" onClick={this.toggleNav}>
+                Contact us
               </a>
             </li>
           </ul>
