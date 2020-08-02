@@ -34,7 +34,6 @@ export class ContactSection extends React.Component {
         [event.target.name]: value,
       },
       () => {
-        // console.log(this.state);
       }
     );
   }
@@ -54,10 +53,7 @@ export class ContactSection extends React.Component {
   }
 
   handleSubmit(event) {
-    // preventDefault prevents the 'normal procedure' from firing
     event.preventDefault();
-    // const data = new FormData(event.target);
-    // console.log(this.state);
     var data = this.state;
 
     fetch("http://localhost:7000/contact-us", {
@@ -114,8 +110,6 @@ export class ContactSection extends React.Component {
           });
           this.resetResponse();
         }
-
-        console.log(data);
       })
       .catch((error) => console.log("ERROR:" + error));
   }
