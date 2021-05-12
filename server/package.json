@@ -24,7 +24,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mocha": "^8.0.1",
-    "nodemailer": "^6.4.10",
+    "nodemailer": "^6.4.16",
     "really-need": "^1.9.2",
     "supertest": "^4.0.2"
   },
